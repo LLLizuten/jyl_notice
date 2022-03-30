@@ -15,4 +15,8 @@ namespace:命名空间,使用Mapper接口的全限定名称
     <select id="getUserByPassword" resultType="com.zhbit.bean.User">
         select * from Nuser where Uname=#{uName} and Upassword=#{uPassword}
     </select>
+    <!--int insertUser (@Param("uName") String userName, @Param("uPassword") String password);-->
+    <insert id="insertUser">
+        insert into Nuser value (null, #{uName}, #{uPassword})
+    </insert>
 </mapper>

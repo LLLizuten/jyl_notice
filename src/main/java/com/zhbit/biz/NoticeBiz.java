@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 /**
- * @author lzy
+ * @author Yanea
  * 2022/3/27 23:58
  */
 public class NoticeBiz {

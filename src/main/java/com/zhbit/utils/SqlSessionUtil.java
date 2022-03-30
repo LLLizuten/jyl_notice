@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * @author lzy
+ * @author Yanea
  * 2022/3/27 20:22
  * 用于加载核心配制文件
  */

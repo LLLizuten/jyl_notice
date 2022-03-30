@@ -6,7 +6,7 @@ import com.zhbit.utils.SqlSessionUtil;
 import org.apache.ibatis.session.SqlSession;
 
 /**
- * @author lzy
+ * @author Yanea
  * 2022/3/28 0:01
  */
 public class UserBiz {
@@ -14,5 +14,9 @@ public class UserBiz {
     UserMapper mapper = session.getMapper(UserMapper.class);
     public User login(String userName, String password){
         return mapper.getUserByPassword(userName,password);
+    }
+
+    public int register (String username, String password) {
+        return mapper.insertUser(username, password);
     }
 }

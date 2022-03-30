@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 /**
- * @author lzy
+ * @author Yanea
  * 2022/3/28 0:00
  */
 public class TypeBiz {

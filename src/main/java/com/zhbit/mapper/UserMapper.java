@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * @author lzy
+ * @author Yanea
  * 2022/3/27 20:21
  */
 public interface UserMapper {
@@ -19,4 +19,10 @@ public interface UserMapper {
      * 根据用户名和密码登录
      */
     User getUserByPassword(@Param("uName") String userName, @Param("uPassword") String password);
+
+    /**
+     * 向表中添加用户
+     * 注册
+     */
+    int insertUser (@Param("uName") String userName, @Param("uPassword") String password);
 }
