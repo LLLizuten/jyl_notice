@@ -7,26 +7,6 @@
 namespace:命名空间,使用Mapper接口的全限定名称
 -->
 <mapper namespace="com.zhbit.mapper.UserMapper">
-    
-    <resultMap id="UserWithNotice" type="User">
-        <id property="uNo" column="uNo"/>
-        <result property="uNmae" column="uName"/>
-        <result property="uPassword" column="uPassword"/>
-        <collection property="noticeList" ofType="Notice">
-            <id property="nNo" column="nNo"/>
-            <result property="nTitle" column="nTitle"/>
-            <result property="nContent" column="nContent"/>
-            <result property="nEditor" column="nEditor"/>
-            <result property="nCreateTime" column="nCreateTime"/>
-            <result property="nType" column="nType"/>
-        </collection>
-    </resultMap>
-
-    <!--List<User> getUserAndNoticeByID (@Param("uNo") int uNo);-->
-    <select id="getUserAndNoticeByID" resultMap="UserWithNotice">
-        select * form User left join on
-    </select>
-    
     <!-- public List<User> getAllUserList(); -->
     <select id="getAllUserList" resultType="com.zhbit.bean.User">
         select * from nuser
@@ -43,4 +23,21 @@ namespace:命名空间,使用Mapper接口的全限定名称
     <update id="updateUser">
         update Nuser SET uName = #{uName}, uPassword = #{uPassword} where uNo = #{uNo}
     </update>
+    <resultMap id="UserWithNotice" type="User">
+        <id property="uNo" column="uNo"/>
+        <result property="uName" column="uName"/>
+        <result property="uPassword" column="uPassword"/>
+        <collection property="notices" ofType="Notice">
+            <id property="nNo" column="nNo"/>
+            <result property="nTitle" column="nTitle"/>
+            <result property="nContent" column="nContent"/>
+            <result property="nEditor" column="nEditor"/>
+            <result property="nCreateTime" column="nCreateTime"/>
+            <result property="nType" column="nType"/>
+        </collection>
+    </resultMap>
+    <!--User getUserAndNotice (@Param("uNo") int uNo);-->
+    <select id="getUserAndNotice" resultMap="UserWithNotice">
+        select * from Nuser right join Notice on Notice.uNo = Nuser.uNo where Notice.uNo = #{uNo}
+    </select>
 </mapper>
