@@ -1,6 +1,7 @@
 package com.zhbit.test.mappertest;
 
 import com.zhbit.bean.User;
+import com.zhbit.bean.Notice;
 import com.zhbit.biz.UserBiz;
 import com.zhbit.mapper.TypeMapper;
 import com.zhbit.mapper.UserMapper;
@@ -51,5 +52,17 @@ public class UserTest {
         UserBiz userBiz = new UserBiz();
         int result = userBiz.register("a", "b");
         System.out.println("Result:" + result);
+    }
+
+    /**
+     * 测试获取用户和用户所发的通知
+     * 一对多
+     */
+    @Test
+    public void test3() {
+        SqlSession sqlSession = SqlSessionUtil.creat();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        User user = mapper.getUserAndNotice(1);
+        System.out.println(user);
     }
 }
