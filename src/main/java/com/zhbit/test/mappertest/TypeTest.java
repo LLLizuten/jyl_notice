@@ -24,6 +24,9 @@ public class TypeTest {
         list.forEach(type -> System.out.println(type));
     }
 
+    /**
+     * 删除通知类型
+     */
     @Test
     public void test1() {
         SqlSession session = SqlSessionUtil.creat();
@@ -32,6 +35,9 @@ public class TypeTest {
         System.out.println(result);
     }
 
+    /**
+     * 添加通知类型
+     */
     @Test
     public void test2() {
         SqlSession session = SqlSessionUtil.creat();
@@ -40,6 +46,9 @@ public class TypeTest {
         System.out.println(result);
     }
 
+    /**
+     * 修改通知类型
+     */
     @Test
     public void test3() {
         SqlSession session = SqlSessionUtil.creat();
