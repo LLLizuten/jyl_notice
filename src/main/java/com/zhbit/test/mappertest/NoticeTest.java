@@ -85,4 +85,27 @@ public class NoticeTest {
         Notice noticeById = mapper.getNoticeById(6);
         System.out.println(noticeById);
     }
+
+    /**
+     * 模糊查询 名称
+     */
+    @Test
+    public void test7() {
+        SqlSession session = SqlSessionUtil.creat();
+        NoticeMapper mapper = session.getMapper(NoticeMapper.class);
+        List<Notice> list = mapper.getNoticeByNameM("通知");
+        list.forEach(notice -> System.out.println(notice));
+
+    }
+
+    /**
+     * 时间区间查询
+     */
+    @Test
+    public void test8() {
+        SqlSession session = SqlSessionUtil.creat();
+        NoticeMapper mapper = session.getMapper(NoticeMapper.class);
+        List<Notice> list = mapper.getNoticeByTime("2013-01-01", "2013-02-01");
+        list.forEach(notice -> System.out.println(notice));
+    }
 }

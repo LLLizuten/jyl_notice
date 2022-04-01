@@ -39,4 +39,14 @@ public interface NoticeMapper {
      * 根据公告id获取公告信息
      */
     Notice getNoticeById(@Param("nNo") int noticeId);
+
+    /**
+     * 根据公告名称模糊查询公告
+     */
+    List<Notice> getNoticeByNameM (@Param("Ntitle") String Ntitle);
+
+    /**
+     * 时间区间查询
+     */
+    List<Notice> getNoticeByTime (@Param("StartTime") String StartTime, @Param("EndTime") String EndTime);
 }

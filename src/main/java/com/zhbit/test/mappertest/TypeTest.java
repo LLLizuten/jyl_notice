@@ -21,8 +21,30 @@ public class TypeTest {
         SqlSession session = SqlSessionUtil.creat();
         TypeMapper mapper = session.getMapper(TypeMapper.class);
         List<Type> list = mapper.getAllTypeList();
-        for (Type type : list) {
-            System.out.println(type);
-        }
+        list.forEach(type -> System.out.println(type));
+    }
+
+    @Test
+    public void test1() {
+        SqlSession session = SqlSessionUtil.creat();
+        TypeMapper mapper = session.getMapper(TypeMapper.class);
+        int result = mapper.deleteType(5);
+        System.out.println(result);
+    }
+
+    @Test
+    public void test2() {
+        SqlSession session = SqlSessionUtil.creat();
+        TypeMapper mapper = session.getMapper(TypeMapper.class);
+        int result = mapper.addType("测试数据");
+        System.out.println(result);
+    }
+
+    @Test
+    public void test3() {
+        SqlSession session = SqlSessionUtil.creat();
+        TypeMapper mapper = session.getMapper(TypeMapper.class);
+        int result = mapper.alterType(6,"修改数据");
+        System.out.println(result);
     }
 }

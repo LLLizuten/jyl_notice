@@ -19,4 +19,8 @@ namespace:命名空间,使用Mapper接口的全限定名称
     <insert id="insertUser">
         insert into Nuser value (null, #{uName}, #{uPassword})
     </insert>
+    <!--int updateUser (@Param("uNo") int uNo); -->
+    <update id="updateUser">
+        update Nuser SET uName = #{uName}, uPassword = #{uPassword} where uNo = #{uNo}
+    </update>
 </mapper>

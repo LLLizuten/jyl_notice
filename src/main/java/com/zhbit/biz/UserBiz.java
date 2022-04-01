@@ -19,4 +19,8 @@ public class UserBiz {
     public int register (String username, String password) {
         return mapper.insertUser(username, password);
     }
+
+    public int update (int uNo, String uName, String uPassword) {
+        return mapper.updateUser(uNo, uName, uPassword);
+    }
 }

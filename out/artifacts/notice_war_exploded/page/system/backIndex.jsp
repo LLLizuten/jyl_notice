@@ -19,7 +19,7 @@
 			</div>
 			<div id="ncss_banner_content">
 				<div class="header_01">
-					后台管理系统 &nbsp;<a href="logout.jsp">退出</a>
+					后台管理系统 &nbsp;<a href="checkinfo.jsp">查看个人信息</a> &nbsp;<a href="logout.jsp">退出</a>
 				</div>
 			</div>
 		</div>

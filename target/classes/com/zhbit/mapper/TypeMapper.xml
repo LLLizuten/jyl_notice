@@ -12,5 +12,20 @@ namespace:命名空间,使用Mapper接口的全限定名称
         select * from Type
     </select>
 
+    <!--int deleteType(int Tno);-->
+    <delete id="deleteType">
+        delete from Type where Tno = #{Tno}
+    </delete>
+
+    <!--int addType(@Param("TtypeName") String TtypeName);-->
+    <insert id="addType">
+        insert into Type value (null, #{TtypeName})
+    </insert>
+
+    <!--int alterType(@Param("Tno") int Tno, @Param("TtypeName") String TtypeName);-->
+    <update id="alterType">
+        update Type SET TtypeName = #{TtypeName} where Tno = #{Tno}
+    </update>
+
 
 </mapper>

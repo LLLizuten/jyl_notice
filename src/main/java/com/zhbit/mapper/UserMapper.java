@@ -25,4 +25,9 @@ public interface UserMapper {
      * 注册
      */
     int insertUser (@Param("uName") String userName, @Param("uPassword") String password);
+
+    /**
+     * 修改个人信息
+     */
+    int updateUser (@Param("uNo") int uNo, @Param("uName") String uName, @Param("uPassword") String uPassword);
 }

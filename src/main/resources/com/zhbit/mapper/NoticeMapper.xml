@@ -38,4 +38,14 @@ namespace:命名空间,使用Mapper接口的全限定名称
     <select id="getNoticeById" resultType="com.zhbit.bean.Notice">
         select * from notice where Nno=#{nNo}
     </select>
+
+    <!--Notice getNoticeByNameM (@Param("Ntitle") String Ntitle);-->
+    <select id="getNoticeByNameM" resultType="Notice">
+        select * from notice where Ntitle like "%"#{Ntitle}"%"
+    </select>
+
+    <!--List<Notice> getNoticeByTime (@Param("NcreateTime") String NcreateTime);-->
+    <select id="getNoticeByTime" resultType="Notice">
+        select * from Notice where NcreateTime between #{StartTime}" 00:00:00" and #{EndTime}" 00:00:00"
+    </select>
 </mapper>
