@@ -13,13 +13,21 @@ import java.io.IOException;
 public class UserServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 6971717725995508517L;
+	String userName;
+	String password;
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		request.setCharacterEncoding("UTF-8");
-		String userName = request.getParameter("userName");
-		String password = request.getParameter("password");
+		//改动
+		User user = (User) request.getSession().getAttribute("LOGINED_USER");
+		if (user != null) {
+			userName = user.getuName();
+			password = user.getuPassword();
+		}else {
+			userName = request.getParameter("userName");
+			password = request.getParameter("password");
+		}
 		UserBiz userBiz = new UserBiz();
 		User loginUser = userBiz.login(userName,password);
 		if (loginUser!=null){

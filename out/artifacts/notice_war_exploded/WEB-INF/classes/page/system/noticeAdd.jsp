@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>添加通知公告</title>
-<link rel="stylesheet" href="css/ncss_style.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/ncss_style.css" type="text/css" />
 <script type="text/javascript" language="javascript">
 	function checkNotice(){
 		var title = form1.title.value;

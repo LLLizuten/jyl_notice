@@ -52,9 +52,18 @@
     <servlet-name>UserUpdateServlet</servlet-name>
     <servlet-class>com.zhbit.web.controller.UserUpdateServlet</servlet-class>
   </servlet>
+  <!-- 添加公告类型的servlet -->
+    <servlet>
+        <servlet-name>TypeAddServlet</servlet-name>
+        <servlet-class>com.zhbit.web.controller.TypeAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>TypeAddServlet</servlet-name>
+      <url-pattern>/typeAddServlet</url-pattern>
+    </servlet-mapping>
 
 
-  <servlet-mapping>
+    <servlet-mapping>
     <servlet-name>typeServlet</servlet-name>
     <url-pattern>/typeServlet</url-pattern>
   </servlet-mapping>

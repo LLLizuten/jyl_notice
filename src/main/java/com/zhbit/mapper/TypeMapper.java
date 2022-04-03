@@ -17,7 +17,7 @@ public interface TypeMapper {
     List<Type> getAllTypeList();
 
     /**
-     * 删除公类型
+     * 删除公告类型
      */
     int deleteType(@Param("Tno") int tno);
 
