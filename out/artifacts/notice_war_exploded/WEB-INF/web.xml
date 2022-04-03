@@ -62,6 +62,25 @@
       <url-pattern>/typeAddServlet</url-pattern>
     </servlet-mapping>
 
+  <!-- 删除公告类型 -->
+  <servlet>
+    <servlet-name>TypeDeleteServlet</servlet-name>
+    <servlet-class>com.zhbit.web.controller.TypeDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TypeDeleteServlet</servlet-name>
+    <url-pattern>/typeDeleteServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- 更新公告类型 -->
+  <servlet>
+    <servlet-name>TypeUpdateServlet</servlet-name>
+    <servlet-class>com.zhbit.web.controller.TypeUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TypeUpdateServlet</servlet-name>
+    <url-pattern>/typeUpdateServlet</url-pattern>
+  </servlet-mapping>
 
     <servlet-mapping>
     <servlet-name>typeServlet</servlet-name>

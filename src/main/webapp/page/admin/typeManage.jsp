@@ -30,7 +30,9 @@
 <tr>
     <td><%=type.gettNo()%></td>
     <td><%=type.gettTypeName()%></td>
-    <td><a>修改</a>/<a>删除</a></td>
+    <td><a href="http://localhost:8080/notice/typeUpdateServlet?tName=<%=type.gettTypeName()%>&tNo=<%=type.gettNo()%>">修改</a>
+        /
+        <a href="http://localhost:8080/notice/typeDeleteServlet?tNo=<%=type.gettNo()%>">删除</a></td>
 
 </tr>
 <%
