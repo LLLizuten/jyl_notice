@@ -39,6 +39,8 @@ public class NoticeServlet extends HttpServlet {
 			doShowNoticeDetailForModify(request, response);
 		} else if ("updateNotice".equals(method)) {
 			doUpdateNotice(request, response);
+		} else if ("getNoticeByNameM".equals(method)){
+			getNoticeByNameM(request, response);
 		}
 	}
 
@@ -48,6 +50,13 @@ public class NoticeServlet extends HttpServlet {
 		this.doGet(request, response);
 	}
 
+	/**
+	 * 通过公告类型id显示通知
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	private void doShowNotice(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		int typeId = Integer.parseInt(request.getParameter("typeId"));
@@ -56,7 +65,14 @@ public class NoticeServlet extends HttpServlet {
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("/page/portal/showNoticeByType.jsp").forward(request, response);
 	}
-	
+
+	/**
+	 * 显示通知具体信息
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	private void doShowNoticeDetail(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException  {
 		int noticeId = Integer.parseInt(request.getParameter("noticeId"));
@@ -79,6 +95,13 @@ public class NoticeServlet extends HttpServlet {
 		request.getRequestDispatcher("page/system/noticeEdit.jsp").forward(request, response);
 	}
 
+	/**
+	 * 修改通知
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	private void doUpdateNotice(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException  {
 		String title = request.getParameter("title");
@@ -86,7 +109,6 @@ public class NoticeServlet extends HttpServlet {
 		String content=request.getParameter("content");
 		int type=Integer.parseInt(request.getParameter("type"));
 		int noticeId = Integer.parseInt(request.getParameter("noticeId"));
-		//测试
 		java.sql.Date date = new java.sql.Date(new Date().getTime());
 		Notice notice =new Notice();
 		notice.setnNo(noticeId);
@@ -94,7 +116,6 @@ public class NoticeServlet extends HttpServlet {
 		notice.setnEditor(editor);
 		notice.setnTitle(title);
 		notice.setnType(type);
-		//测试
 		notice.setnCreateTime(date);
 		NoticeBiz noticeBiz = new NoticeBiz();
 		if (noticeBiz.updateNotice(notice)){
@@ -106,6 +127,13 @@ public class NoticeServlet extends HttpServlet {
 		}
 	}
 
+	/**
+	 * 删除通知
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	private void doDeleteNotice(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException  {
 		int noticeId = Integer.parseInt(request.getParameter("noticeId"));
@@ -134,7 +162,6 @@ public class NoticeServlet extends HttpServlet {
 		String content=request.getParameter("content");
 		int type=Integer.parseInt(request.getParameter("type"));
 
-		//测试
 		java.sql.Date date = new java.sql.Date(new Date().getTime());
 
 		Notice notice =new Notice();
@@ -159,5 +186,17 @@ public class NoticeServlet extends HttpServlet {
 		List<Notice> list = noticeBiz.getAllNotice();
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("/page/system/showAllNoticeList.jsp").forward(request, response);
-	}	
+	}
+
+	/**
+	 * 模糊查询
+	 */
+	private void getNoticeByNameM (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String noticeName = request.getParameter("noticeName");
+		NoticeBiz noticeBiz = new NoticeBiz();
+		List<Notice> list = noticeBiz.getNoticeByNameM(noticeName);
+		request.setAttribute("list", list);
+		System.out.println(list);
+		request.getRequestDispatcher("/page/portal/showNoticeM.jsp").forward(request, response);
+	}
 }

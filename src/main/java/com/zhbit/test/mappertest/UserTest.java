@@ -11,15 +11,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-/**
- * @author Yanea
- * 2022/3/27 21:22
- */
+
 public class UserTest {
-
-
-
-
     /**
      * 测试getAllUserList
      */

@@ -1,15 +1,12 @@
 package com.zhbit.mapper;
 
-import com.zhbit.bean.Notice;
+
 import com.zhbit.bean.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * @author Yanea
- * 2022/3/27 20:21
- */
+
 public interface UserMapper {
     /**
      * 获取所有用户

@@ -3,12 +3,13 @@ package com.zhbit.biz;
 import com.zhbit.bean.Notice;
 import com.zhbit.mapper.NoticeMapper;
 import com.zhbit.utils.SqlSessionUtil;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
 
 /**
- * @author Yanea
+ * @author lzy
  * 2022/3/27 23:58
  */
 public class NoticeBiz {
@@ -36,5 +37,9 @@ public class NoticeBiz {
 
     public boolean deleteNotice(int noticeId){
         return mapper.deleteNotice(noticeId);
+    }
+
+    public List<Notice> getNoticeByNameM (String Ntitle){
+        return mapper.getNoticeByNameM(Ntitle);
     }
 }

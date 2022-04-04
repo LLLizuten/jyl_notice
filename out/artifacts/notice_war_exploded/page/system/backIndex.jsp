@@ -29,11 +29,8 @@
 	<div id="ncss_content_wrapper">
 		<div id="ncss_content">
 			<div id="column_w300">
-				<div class="header_03">通知公告类别</div>
-<%--				<div>--%>
-<%--					<a href="page/admin/typeManage.jsp">公告类型管理</a>--%>
-<%--				</div>--%>
-				<!-- 添加通知公告的iframe -->
+<%--				<div class="header_03">通知公告类别</div>--%>
+
 				<div class="column_w300_section_01">
 					<div class="notice_image_wrapper">
 						<img src="images/ncss_image_02.jpg" alt="image" />

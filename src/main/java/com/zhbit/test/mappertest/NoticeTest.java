@@ -10,10 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author Yanea
- * 2022/3/27 21:29
- */
+
 public class NoticeTest {
     /**
      * 测试addNotice方法

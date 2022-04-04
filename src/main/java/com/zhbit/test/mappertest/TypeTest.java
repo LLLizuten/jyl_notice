@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-/**
- * @author Yanea
- * 2022/3/27 20:50
- */
+
 public class TypeTest {
     /**
      * 测试getAllTypeList

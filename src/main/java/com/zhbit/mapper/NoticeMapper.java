@@ -5,10 +5,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * @author Yanea
- * 2022/3/27 20:21
- */
+
 public interface NoticeMapper {
     /**
      * 往公告栏添加信息
