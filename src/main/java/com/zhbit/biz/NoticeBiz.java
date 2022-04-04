@@ -42,4 +42,7 @@ public class NoticeBiz {
     public List<Notice> getNoticeByNameM (String Ntitle){
         return mapper.getNoticeByNameM(Ntitle);
     }
+    public List<Notice> getNoticeByTime (String StartTime, String EndTime){
+        return mapper.getNoticeByTime(StartTime, EndTime);
+    }
 }

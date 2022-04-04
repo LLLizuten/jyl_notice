@@ -41,6 +41,8 @@ public class NoticeServlet extends HttpServlet {
 			doUpdateNotice(request, response);
 		} else if ("getNoticeByNameM".equals(method)){
 			getNoticeByNameM(request, response);
+		} else if ("getNoticeByTime".equals(method)){
+			getNoticeByTime(request, response);
 		}
 	}
 
@@ -198,5 +200,17 @@ public class NoticeServlet extends HttpServlet {
 		request.setAttribute("list", list);
 		System.out.println(list);
 		request.getRequestDispatcher("/page/portal/showNoticeM.jsp").forward(request, response);
+	}
+
+	/**
+	 * 根据发布时间区间查询公告
+	 */
+	private void getNoticeByTime (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String sTime = request.getParameter("startTime");
+		String eTime = request.getParameter("endTime");
+		NoticeBiz noticeBiz = new NoticeBiz();
+		List<Notice> list = noticeBiz.getNoticeByTime(sTime, eTime);
+		request.setAttribute("list", list);
+		request.getRequestDispatcher("page/portal/showNoticeByTime.jsp").forward(request, response);
 	}
 }

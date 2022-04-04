@@ -55,7 +55,9 @@
                         <input type="text" name="noticeName"/><input type="submit" value="搜索"/>
                     </form>
 
-
+                    <a href="page/portal/selectNoticeByTime.jsp"
+                       target="showNotice">时间查询;
+                    </a>
 
                 </div>
                 <div class="cleaner"></div>
