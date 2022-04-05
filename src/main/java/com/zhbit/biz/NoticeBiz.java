@@ -13,6 +13,7 @@ import java.util.List;
  * @author lzy
  * 2022/3/27 23:58
  */
+@Service
 public class NoticeBiz {
     SqlSession session = SqlSessionUtil.creat();
     NoticeMapper mapper = session.getMapper(NoticeMapper.class);
