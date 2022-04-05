@@ -1,9 +1,13 @@
 package com.zhbit.biz;
 
+import com.zhbit.bean.Notice;
 import com.zhbit.bean.User;
 import com.zhbit.mapper.UserMapper;
 import com.zhbit.utils.SqlSessionUtil;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
+
+import java.util.List;
 
 /**
  * @author lzy
@@ -22,5 +26,9 @@ public class UserBiz {
 
     public int update (int uNo, String uName, String uPassword) {
         return mapper.updateUser(uNo, uName, uPassword);
+    }
+
+    public User getUserAndNotice (int uNo){
+        return mapper.getUserAndNotice(uNo);
     }
 }

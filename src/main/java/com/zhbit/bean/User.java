@@ -9,6 +9,9 @@ public class User {
     private int uNo;
     private String uName;
     private String uPassword;
+    /**
+     * 用户和公告之间的一对多映射关系
+     */
     private List<Notice> notices;
 
     public List<Notice> getNotices() {
@@ -28,9 +31,6 @@ public class User {
     public void setNotices(List<Notice> notices) {
         this.notices = notices;
     }
-
-
-
 
     public User() {
     }

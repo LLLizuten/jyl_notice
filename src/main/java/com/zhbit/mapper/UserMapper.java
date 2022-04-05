@@ -1,6 +1,7 @@
 package com.zhbit.mapper;
 
 
+import com.zhbit.bean.Notice;
 import com.zhbit.bean.User;
 import org.apache.ibatis.annotations.Param;
 
@@ -31,7 +32,9 @@ public interface UserMapper {
 
     /**
      * 查询用户 拥有一对多的通知
+     * 一对多查询
      */
     User getUserAndNotice (@Param("uNo") int uNo);
+
 
 }

@@ -82,6 +82,16 @@
     <url-pattern>/typeUpdateServlet</url-pattern>
   </servlet-mapping>
 
+  <!-- 一对多查询 -->
+  <servlet>
+    <servlet-name>UserQueryServlet</servlet-name>
+    <servlet-class>com.zhbit.web.controller.UserQueryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserQueryServlet</servlet-name>
+    <url-pattern>/userQueryServlet</url-pattern>
+  </servlet-mapping>
+
     <servlet-mapping>
     <servlet-name>typeServlet</servlet-name>
     <url-pattern>/typeServlet</url-pattern>

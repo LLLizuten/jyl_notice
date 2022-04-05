@@ -5,6 +5,7 @@ import com.zhbit.mapper.NoticeMapper;
 import com.zhbit.utils.SqlSessionUtil;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

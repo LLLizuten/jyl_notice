@@ -40,4 +40,7 @@ namespace:命名空间,使用Mapper接口的全限定名称
     <select id="getUserAndNotice" resultMap="UserWithNotice">
         select * from Nuser right join Notice on Notice.uNo = Nuser.uNo where Notice.uNo = #{uNo}
     </select>
+
+
+
 </mapper>
