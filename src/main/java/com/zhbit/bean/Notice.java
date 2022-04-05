@@ -15,6 +15,7 @@ public class Notice {
 		
 	}
 
+
 	public Notice(int nNo, String nTitle, String nContent, String nEditor, Date nCreateTime, int nType, int uNo) {
 		this.nNo = nNo;
 		this.nTitle = nTitle;

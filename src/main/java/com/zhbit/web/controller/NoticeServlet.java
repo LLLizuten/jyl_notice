@@ -232,7 +232,7 @@ public class NoticeServlet extends HttpServlet {
 	 */
 	private void getNoticeByNameM (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        System.out.println("测试");
-		String Ntitle = request.getParameter("Ntitle");
+		String Ntitle = request.getParameter("noticeName");
 		NoticeBiz noticeBiz = new NoticeBiz();
 		List<Notice> list = noticeBiz.getNoticeByNameM(Ntitle);
 		request.setAttribute("list", list);

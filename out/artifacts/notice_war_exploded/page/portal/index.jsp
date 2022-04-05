@@ -56,7 +56,7 @@
                     </form>
 
                     <a href="page/portal/selectNoticeByTime.jsp"
-                       target="showNotice">时间查询;
+                       target="showNotice">根据发布时间查询公告;
                     </a>
 
                 </div>
