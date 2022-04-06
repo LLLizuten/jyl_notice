@@ -5,6 +5,7 @@ import com.zhbit.mapper.NoticeMapper;
 import com.zhbit.utils.SqlSessionUtil;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +16,8 @@ import java.util.List;
  */
 @Service
 public class NoticeBiz {
-    SqlSession session = SqlSessionUtil.creat();
-    NoticeMapper mapper = session.getMapper(NoticeMapper.class);
+    static SqlSession session = SqlSessionUtil.creat();
+    static NoticeMapper mapper = session.getMapper(NoticeMapper.class);
     public List<Notice> getAllNotice(){
         return mapper.getAllNoticeList();
     }

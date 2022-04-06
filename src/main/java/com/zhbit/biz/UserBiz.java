@@ -16,8 +16,8 @@ import java.util.List;
  */
 @Service
 public class UserBiz {
-    SqlSession session = SqlSessionUtil.creat();
-    UserMapper mapper = session.getMapper(UserMapper.class);
+    static SqlSession session = SqlSessionUtil.creat();
+    static UserMapper mapper = session.getMapper(UserMapper.class);
     public User login(String userName, String password){
         return mapper.getUserByPassword(userName,password);
     }

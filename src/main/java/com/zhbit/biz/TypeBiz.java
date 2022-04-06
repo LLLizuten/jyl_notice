@@ -15,8 +15,8 @@ import java.util.List;
  */
 @Service
 public class TypeBiz {
-    SqlSession session = SqlSessionUtil.creat();
-    TypeMapper mapper = session.getMapper(TypeMapper.class);
+    static SqlSession session = SqlSessionUtil.creat();
+    static TypeMapper mapper = session.getMapper(TypeMapper.class);
     /**
      * 获取所有公告
      */

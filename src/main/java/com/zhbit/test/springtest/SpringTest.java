@@ -18,8 +18,8 @@ public class SpringTest {
     @Test
     public void test1(){
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-        NoticeBiz noticeBize = context.getBean("noticeBiz", NoticeBiz.class);
-        List<Notice> allNotice = noticeBize.getAllNotice();
+        NoticeBiz noticeBiz = context.getBean("noticeBiz", NoticeBiz.class);
+        List<Notice> allNotice = noticeBiz.getAllNotice();
         System.out.println(allNotice);
 
     }
