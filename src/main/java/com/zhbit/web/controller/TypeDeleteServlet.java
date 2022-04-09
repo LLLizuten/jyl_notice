@@ -1,6 +1,8 @@
 package com.zhbit.web.controller;
 
 import com.zhbit.biz.TypeBiz;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,10 +15,12 @@ import java.io.IOException;
  * 2022/4/3 9:54
  */
 public class TypeDeleteServlet extends HttpServlet {
+    private static ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+    private static TypeBiz typeBiz = context.getBean("typeBiz", TypeBiz.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int tNo = Integer.parseInt(req.getParameter("tNo"));
-        TypeBiz typeBiz = new TypeBiz();
+        //TypeBiz typeBiz = new TypeBiz();
         int i = typeBiz.deleteType(tNo);
         if (i != 0) {
             System.out.println("删除成功");

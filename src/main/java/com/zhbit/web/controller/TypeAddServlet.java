@@ -4,12 +4,16 @@ package com.zhbit.web.controller; /**
  */
 
 import com.zhbit.biz.TypeBiz;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
 
 public class TypeAddServlet extends HttpServlet {
+    private static ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+    private static TypeBiz typeBiz = context.getBean("typeBiz", TypeBiz.class);
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -18,7 +22,7 @@ public class TypeAddServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String typeName = request.getParameter("typeName");
-        TypeBiz typeBiz = new TypeBiz();
+        //TypeBiz typeBiz = new TypeBiz();
         int i = typeBiz.addType(typeName);
         if (i != 0){
             System.out.println(i);
