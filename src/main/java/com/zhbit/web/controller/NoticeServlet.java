@@ -6,9 +6,9 @@ import com.zhbit.bean.Type;
 import com.zhbit.bean.User;
 import com.zhbit.biz.NoticeBiz;
 import com.zhbit.biz.TypeBiz;
-import com.zhbit.config.SpringConfig;
+
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +22,8 @@ public class NoticeServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 2884006783308811985L;
 
-	private static ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+	private static ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+
 	private static NoticeBiz noticeBiz = context.getBean("noticeBiz", NoticeBiz.class);
 	private static TypeBiz typeBiz = context.getBean("typeBiz", TypeBiz.class);
 
