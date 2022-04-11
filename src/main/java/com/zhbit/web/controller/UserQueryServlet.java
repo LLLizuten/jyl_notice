@@ -6,6 +6,7 @@ import com.zhbit.biz.TypeBiz;
 import com.zhbit.biz.UserBiz;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +20,7 @@ import java.util.List;
  * 2022/4/5 10:26
  * 用于一对多查询的servlet
  */
+@Controller
 public class UserQueryServlet extends HttpServlet {
     private static ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
     private static UserBiz userBiz = context.getBean("userBiz", UserBiz.class);

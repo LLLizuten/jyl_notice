@@ -20,10 +20,10 @@ public class SpringTest {
     @Test
     public void test1(){
         //AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        NoticeBiz noticeBiz = context.getBean("noticeBiz", NoticeBiz.class);
-        List<Notice> allNotice = noticeBiz.getAllNotice();
-        System.out.println(allNotice);
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+//        NoticeBiz noticeBiz = context.getBean("noticeBiz", NoticeBiz.class);
+//        List<Notice> allNotice = noticeBiz.getAllNotice();
+//        System.out.println(allNotice);
 
     }
 
@@ -33,5 +33,20 @@ public class SpringTest {
         TypeBiz typeBiz = context.getBean("typeBiz", TypeBiz.class);
         List<Type> allType = typeBiz.getAllType();
         System.out.println(allType);
+    }
+
+    @Test
+    public void test3(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        NoticeBiz noticeBiz = context.getBean("noticeBiz", NoticeBiz.class);
+        List<Notice> list = noticeBiz.getAllNotice();
+        for (Notice notice : list) {
+            System.out.println(notice);
+        }
+    }
+
+    @Test
+    public void test4(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
     }
 }

@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -15,9 +16,21 @@ import java.util.List;
  * 2022/3/27 23:58
  */
 @Service
+@Transactional
 public class NoticeBiz {
-    static SqlSession session = SqlSessionUtil.creat();
-    static NoticeMapper mapper = session.getMapper(NoticeMapper.class);
+//    static SqlSession session = SqlSessionUtil.creat();
+//    static NoticeMapper mapper = session.getMapper(NoticeMapper.class);
+    @Autowired
+    private NoticeMapper mapper;
+
+    public NoticeMapper getMapper() {
+        return mapper;
+    }
+
+    public void setMapper(NoticeMapper mapper) {
+        this.mapper = mapper;
+    }
+
     public List<Notice> getAllNotice(){
         return mapper.getAllNoticeList();
     }

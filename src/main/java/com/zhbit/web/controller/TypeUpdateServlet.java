@@ -4,6 +4,7 @@ import com.zhbit.bean.Type;
 import com.zhbit.biz.TypeBiz;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +16,7 @@ import java.io.IOException;
  * @author lzy
  * 2022/4/3 10:33
  */
+@Controller
 public class TypeUpdateServlet extends HttpServlet {
     private static ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
     private static TypeBiz typeBiz = context.getBean("typeBiz", TypeBiz.class);

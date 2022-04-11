@@ -5,6 +5,7 @@ import com.zhbit.bean.Type;
 import com.zhbit.biz.TypeBiz;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-
+@Controller
 public class TypeServlet extends HttpServlet {
 	private static final long serialVersionUID = 3874739343783059139L;
 	private static ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");

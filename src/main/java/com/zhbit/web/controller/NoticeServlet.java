@@ -9,6 +9,7 @@ import com.zhbit.biz.TypeBiz;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-
+@Controller
 public class NoticeServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 2884006783308811985L;

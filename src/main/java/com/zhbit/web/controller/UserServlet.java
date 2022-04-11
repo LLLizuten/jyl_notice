@@ -5,13 +5,14 @@ import com.zhbit.bean.User;
 import com.zhbit.biz.UserBiz;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+@Controller
 public class UserServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 6971717725995508517L;

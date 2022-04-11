@@ -6,8 +6,10 @@ import com.zhbit.mapper.UserMapper;
 import com.zhbit.utils.SqlSessionUtil;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -15,9 +17,21 @@ import java.util.List;
  * 2022/3/28 0:01
  */
 @Service
+@Transactional
 public class UserBiz {
-    static SqlSession session = SqlSessionUtil.creat();
-    static UserMapper mapper = session.getMapper(UserMapper.class);
+//    static SqlSession session = SqlSessionUtil.creat();
+//    static UserMapper mapper = session.getMapper(UserMapper.class);
+    @Autowired
+    private UserMapper mapper;
+
+    public UserMapper getMapper() {
+        return mapper;
+    }
+
+    public void setMapper(UserMapper mapper) {
+        this.mapper = mapper;
+    }
+
     public User login(String userName, String password){
         return mapper.getUserByPassword(userName,password);
     }
